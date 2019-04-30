@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>backgroundColor</string>
+	<string>layer</string>
+	<string>masksToBounds</string>
+	<string>cornerRadius</string>
+	<string>alpha</string>
+	<string>tag</string>
+	<string>hidesWhenStopped</string>
+	<string>color</string>
+	<string>font</string>
+	<string>textColor</string>
+	<string>text</string>
+	<string>placeholder</string>
+	<string>secureTextEntry</string>
+	<string>numberOfLines</string>
+	<string>textAlignment</string>
+	<string>lineBreakMode</string>
+	<string>window</string>
+	<string>center</string>
+	<string>view</string>
+	<string>frame</string>
+	<string>image</string>
+	<string>contentMode</string>
+	<string>x</string>
+	<string>y</string>
+	<string>titleLabel</string>
+	<string>frame</string>
+	<string>hidden</string>
+	<string>definesPresentationContext</string>
+	<string>navigationBarHidden</string>
+	<string>modalPresentationStyle</string>
+	<string>modalTransitionStyle</string>
+	<string>separatorStyle</string>
+	<string>dataSource</string>
+	<string>delegate</string>
+	<string>selected</string>
+	<string>UI_APPEARANCE_SELECTOR</string>
+	<string>type</string>
+	<string>duration</string>
+	<string>animations</string>
+</array>
+</plist>

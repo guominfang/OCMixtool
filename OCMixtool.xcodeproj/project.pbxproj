@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F565B3382276866800BCA081 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B3372276866800BCA081 /* main.m */; };
+		F565B3502276EE8800BCA081 /* OCMRegexUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B34F2276EE8800BCA081 /* OCMRegexUtil.m */; };
+		F565B3532276F07F00BCA081 /* OCMFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B3522276F07F00BCA081 /* OCMFileUtil.m */; };
+		F565B35D2276F9C600BCA081 /* OCMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B35B2276F9C600BCA081 /* OCMConfig.m */; };
+		F565B3602276FC1E00BCA081 /* OCMIgnoreFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B35F2276FC1E00BCA081 /* OCMIgnoreFile.m */; };
+		F565B363227701D400BCA081 /* OCMixPropertyName.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B362227701D400BCA081 /* OCMixPropertyName.m */; };
+		F565B366227703E000BCA081 /* OCMRandomNameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B365227703E000BCA081 /* OCMRandomNameUtil.m */; };
+		F565B36922772B0D00BCA081 /* OCMPropertyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B36822772B0D00BCA081 /* OCMPropertyModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F565B3322276866800BCA081 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F565B3342276866800BCA081 /* OCMixtool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OCMixtool; sourceTree = BUILT_PRODUCTS_DIR; };
+		F565B3372276866800BCA081 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F565B34E2276EE8800BCA081 /* OCMRegexUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMRegexUtil.h; sourceTree = "<group>"; };
+		F565B34F2276EE8800BCA081 /* OCMRegexUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMRegexUtil.m; sourceTree = "<group>"; };
+		F565B3512276F07F00BCA081 /* OCMFileUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMFileUtil.h; sourceTree = "<group>"; };
+		F565B3522276F07F00BCA081 /* OCMFileUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMFileUtil.m; sourceTree = "<group>"; };
+		F565B35B2276F9C600BCA081 /* OCMConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMConfig.m; sourceTree = "<group>"; };
+		F565B35C2276F9C600BCA081 /* OCMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConfig.h; sourceTree = "<group>"; };
+		F565B35E2276FC1E00BCA081 /* OCMIgnoreFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMIgnoreFile.h; sourceTree = "<group>"; };
+		F565B35F2276FC1E00BCA081 /* OCMIgnoreFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMIgnoreFile.m; sourceTree = "<group>"; };
+		F565B361227701D400BCA081 /* OCMixPropertyName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMixPropertyName.h; sourceTree = "<group>"; };
+		F565B362227701D400BCA081 /* OCMixPropertyName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMixPropertyName.m; sourceTree = "<group>"; };
+		F565B364227703E000BCA081 /* OCMRandomNameUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMRandomNameUtil.h; sourceTree = "<group>"; };
+		F565B365227703E000BCA081 /* OCMRandomNameUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMRandomNameUtil.m; sourceTree = "<group>"; };
+		F565B36722772B0D00BCA081 /* OCMPropertyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMPropertyModel.h; sourceTree = "<group>"; };
+		F565B36822772B0D00BCA081 /* OCMPropertyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMPropertyModel.m; sourceTree = "<group>"; };
+		F565B36A227730B800BCA081 /* system_property_name.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = system_property_name.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F565B3312276866800BCA081 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F565B32B2276866800BCA081 = {
+			isa = PBXGroup;
+			children = (
+				F565B3362276866800BCA081 /* OCMixtool */,
+				F565B3352276866800BCA081 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F565B3352276866800BCA081 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F565B3342276866800BCA081 /* OCMixtool */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F565B3362276866800BCA081 /* OCMixtool */ = {
+			isa = PBXGroup;
+			children = (
+				F565B3572276F13500BCA081 /* Config */,
+				F565B33E2276871100BCA081 /* Utlis */,
+				F565B3562276F0D600BCA081 /* ModityPrefix */,
+				F565B3552276F0AA00BCA081 /* MixMethodName */,
+				F565B3542276F08F00BCA081 /* MixPropertyName */,
+				F565B3372276866800BCA081 /* main.m */,
+			);
+			path = OCMixtool;
+			sourceTree = "<group>";
+		};
+		F565B33E2276871100BCA081 /* Utlis */ = {
+			isa = PBXGroup;
+			children = (
+				F565B34E2276EE8800BCA081 /* OCMRegexUtil.h */,
+				F565B34F2276EE8800BCA081 /* OCMRegexUtil.m */,
+				F565B3512276F07F00BCA081 /* OCMFileUtil.h */,
+				F565B3522276F07F00BCA081 /* OCMFileUtil.m */,
+				F565B35E2276FC1E00BCA081 /* OCMIgnoreFile.h */,
+				F565B35F2276FC1E00BCA081 /* OCMIgnoreFile.m */,
+				F565B364227703E000BCA081 /* OCMRandomNameUtil.h */,
+				F565B365227703E000BCA081 /* OCMRandomNameUtil.m */,
+			);
+			path = Utlis;
+			sourceTree = "<group>";
+		};
+		F565B3542276F08F00BCA081 /* MixPropertyName */ = {
+			isa = PBXGroup;
+			children = (
+				F565B36A227730B800BCA081 /* system_property_name.plist */,
+				F565B361227701D400BCA081 /* OCMixPropertyName.h */,
+				F565B362227701D400BCA081 /* OCMixPropertyName.m */,
+				F565B36722772B0D00BCA081 /* OCMPropertyModel.h */,
+				F565B36822772B0D00BCA081 /* OCMPropertyModel.m */,
+			);
+			path = MixPropertyName;
+			sourceTree = "<group>";
+		};
+		F565B3552276F0AA00BCA081 /* MixMethodName */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MixMethodName;
+			sourceTree = "<group>";
+		};
+		F565B3562276F0D600BCA081 /* ModityPrefix */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModityPrefix;
+			sourceTree = "<group>";
+		};
+		F565B3572276F13500BCA081 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				F565B35C2276F9C600BCA081 /* OCMConfig.h */,
+				F565B35B2276F9C600BCA081 /* OCMConfig.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F565B3332276866800BCA081 /* OCMixtool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F565B33B2276866800BCA081 /* Build configuration list for PBXNativeTarget "OCMixtool" */;
+			buildPhases = (
+				F565B3302276866800BCA081 /* Sources */,
+				F565B3312276866800BCA081 /* Frameworks */,
+				F565B3322276866800BCA081 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCMixtool;
+			productName = OCMixtool;
+			productReference = F565B3342276866800BCA081 /* OCMixtool */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F565B32C2276866800BCA081 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OCM;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Kowk;
+				TargetAttributes = {
+					F565B3332276866800BCA081 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = F565B32F2276866800BCA081 /* Build configuration list for PBXProject "OCMixtool" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F565B32B2276866800BCA081;
+			productRefGroup = F565B3352276866800BCA081 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F565B3332276866800BCA081 /* OCMixtool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F565B3302276866800BCA081 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F565B3382276866800BCA081 /* main.m in Sources */,
+				F565B3502276EE8800BCA081 /* OCMRegexUtil.m in Sources */,
+				F565B36922772B0D00BCA081 /* OCMPropertyModel.m in Sources */,
+				F565B3602276FC1E00BCA081 /* OCMIgnoreFile.m in Sources */,
+				F565B3532276F07F00BCA081 /* OCMFileUtil.m in Sources */,
+				F565B363227701D400BCA081 /* OCMixPropertyName.m in Sources */,
+				F565B366227703E000BCA081 /* OCMRandomNameUtil.m in Sources */,
+				F565B35D2276F9C600BCA081 /* OCMConfig.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F565B3392276866800BCA081 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F565B33A2276866800BCA081 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F565B33C2276866800BCA081 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 895SMC99R9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F565B33D2276866800BCA081 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 895SMC99R9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F565B32F2276866800BCA081 /* Build configuration list for PBXProject "OCMixtool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F565B3392276866800BCA081 /* Debug */,
+				F565B33A2276866800BCA081 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F565B33B2276866800BCA081 /* Build configuration list for PBXNativeTarget "OCMixtool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F565B33C2276866800BCA081 /* Debug */,
+				F565B33D2276866800BCA081 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F565B32C2276866800BCA081 /* Project object */;
+}
