@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 获取该目录下，包含子目录中的 所有 .h .m 文件路径
 + (NSArray *)findAllClassFileFromDirectory:(NSString *)dir;
+
+// 从dir目录中查找project.pbxproj文件的
++ (NSString *)findProjectPbxprojPathFromDirectory:(NSString *)parentDir;
+
 @end
 
 NS_ASSUME_NONNULL_END

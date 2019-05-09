@@ -8,12 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-// 需要混淆代码的目录
-static NSString *kProjectDirPath = @"/Users/kwok/Documents/workplace/iOS/SDK_v4_iOS";
+
 // 需要混淆工具项目的目录（因为 Command Line Tool 项目，不能打包配置文件，所以只能通过这样配置来读取项目的配置文件，从而启动混淆）
-static NSString *kMixtoolProjectDir = @"/Users/kwok/Documents/workplace/iOS/OCMixtool/OCMixtool";
+static NSString *kMixtoolProjectDir = @"/Users/guominfang/Documents/workplace/iOS/OCMixtool/OCMixtool";
+
+// 需要混淆代码的目录
+static NSString *kProjectDirPath = @"/Users/guominfang/Documents/workplace/iOS/SDK_v4_iOS";
+// 需要修改的项目的项目名称
+static NSString *kOldProjectName = @"SDK_v4_iOS";
+// 新的项目名称
+//static NSString *kNewProjectName = @"AAAA";
 // 旧的前缀
-static NSString *kOldPrefix = @"AAA";
+static NSString *kOldPrefix = @"JJF";
 // 新的前缀
 static NSString *kNewPrefix = @"BBB";
 

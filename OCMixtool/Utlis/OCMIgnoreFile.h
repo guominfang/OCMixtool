@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OCMIgnoreFile : NSObject
 
++ (BOOL)isIgnoreHiddenFileWithName:(NSString *)fileName;
 + (BOOL)isIgnoreFileWithName:(NSString *)name;
 
 @end

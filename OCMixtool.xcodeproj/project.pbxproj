@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC7C6C632283C18200182D58 /* OCModityPrefix.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7C6C622283C18200182D58 /* OCModityPrefix.m */; };
+		AC7C6C672283C38B00182D58 /* OCMixMethodName.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7C6C662283C38B00182D58 /* OCMixMethodName.m */; };
 		F565B3382276866800BCA081 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B3372276866800BCA081 /* main.m */; };
 		F565B3502276EE8800BCA081 /* OCMRegexUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B34F2276EE8800BCA081 /* OCMRegexUtil.m */; };
 		F565B3532276F07F00BCA081 /* OCMFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B3522276F07F00BCA081 /* OCMFileUtil.m */; };
@@ -30,6 +32,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC7C6C612283C18200182D58 /* OCModityPrefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCModityPrefix.h; sourceTree = "<group>"; };
+		AC7C6C622283C18200182D58 /* OCModityPrefix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCModityPrefix.m; sourceTree = "<group>"; };
+		AC7C6C652283C38B00182D58 /* OCMixMethodName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMixMethodName.h; sourceTree = "<group>"; };
+		AC7C6C662283C38B00182D58 /* OCMixMethodName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMixMethodName.m; sourceTree = "<group>"; };
 		F565B3342276866800BCA081 /* OCMixtool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OCMixtool; sourceTree = BUILT_PRODUCTS_DIR; };
 		F565B3372276866800BCA081 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F565B34E2276EE8800BCA081 /* OCMRegexUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMRegexUtil.h; sourceTree = "<group>"; };
@@ -60,6 +66,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC7C6C602283C16A00182D58 /* ModityPrefix */ = {
+			isa = PBXGroup;
+			children = (
+				AC7C6C612283C18200182D58 /* OCModityPrefix.h */,
+				AC7C6C622283C18200182D58 /* OCModityPrefix.m */,
+			);
+			path = ModityPrefix;
+			sourceTree = "<group>";
+		};
+		AC7C6C642283C37800182D58 /* MixMethodName */ = {
+			isa = PBXGroup;
+			children = (
+				AC7C6C652283C38B00182D58 /* OCMixMethodName.h */,
+				AC7C6C662283C38B00182D58 /* OCMixMethodName.m */,
+			);
+			path = MixMethodName;
+			sourceTree = "<group>";
+		};
 		F565B32B2276866800BCA081 = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +103,11 @@
 		F565B3362276866800BCA081 /* OCMixtool */ = {
 			isa = PBXGroup;
 			children = (
-				F565B3572276F13500BCA081 /* Config */,
-				F565B33E2276871100BCA081 /* Utlis */,
-				F565B3562276F0D600BCA081 /* ModityPrefix */,
-				F565B3552276F0AA00BCA081 /* MixMethodName */,
+				AC7C6C642283C37800182D58 /* MixMethodName */,
+				AC7C6C602283C16A00182D58 /* ModityPrefix */,
 				F565B3542276F08F00BCA081 /* MixPropertyName */,
+				F565B33E2276871100BCA081 /* Utlis */,
+				F565B3572276F13500BCA081 /* Config */,
 				F565B3372276866800BCA081 /* main.m */,
 			);
 			path = OCMixtool;
@@ -114,20 +138,6 @@
 				F565B36822772B0D00BCA081 /* OCMPropertyModel.m */,
 			);
 			path = MixPropertyName;
-			sourceTree = "<group>";
-		};
-		F565B3552276F0AA00BCA081 /* MixMethodName */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MixMethodName;
-			sourceTree = "<group>";
-		};
-		F565B3562276F0D600BCA081 /* ModityPrefix */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ModityPrefix;
 			sourceTree = "<group>";
 		};
 		F565B3572276F13500BCA081 /* Config */ = {
@@ -175,7 +185,7 @@
 				};
 			};
 			buildConfigurationList = F565B32F2276866800BCA081 /* Build configuration list for PBXProject "OCMixtool" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,7 +210,9 @@
 				F565B3502276EE8800BCA081 /* OCMRegexUtil.m in Sources */,
 				F565B36922772B0D00BCA081 /* OCMPropertyModel.m in Sources */,
 				F565B3602276FC1E00BCA081 /* OCMIgnoreFile.m in Sources */,
+				AC7C6C632283C18200182D58 /* OCModityPrefix.m in Sources */,
 				F565B3532276F07F00BCA081 /* OCMFileUtil.m in Sources */,
+				AC7C6C672283C38B00182D58 /* OCMixMethodName.m in Sources */,
 				F565B363227701D400BCA081 /* OCMixPropertyName.m in Sources */,
 				F565B366227703E000BCA081 /* OCMRandomNameUtil.m in Sources */,
 				F565B35D2276F9C600BCA081 /* OCMConfig.m in Sources */,
