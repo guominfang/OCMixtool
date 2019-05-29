@@ -18,6 +18,9 @@ static NSString *classCategoryNameRegex = @"^ *@interface +\\w+ *\\( *(\\w+) *\\
 static NSString *classStatementNameRegex = @"^ *@interface +(\\w+) *:";
 static NSString *classImplementationNameRegex = @"^ *@implementation +(\\w+) *\\n";
 
+static NSString *eunmNameRegex = @"^ *typedef +NS_ENUM.*?(\\w+)\\)";
+static NSString *eunmContentRegex = @"^ *typedef +NS_ENUM.*?(\\{[\\s\\S]*?\\})";
+static NSString *eunmFieldRegex = @"^ *[a-z_A-Z]+";
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OCMRegexUtil : NSObject

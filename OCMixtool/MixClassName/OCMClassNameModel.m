@@ -7,16 +7,38 @@
 //
 
 #import "OCMClassNameModel.h"
+#import "OCMConfig.h"
 
 @implementation OCMClassNameModel
 
-
-- (NSString *)classNameNotExtensionRegex {
-    return [NSString stringWithFormat:@"\\W%@\\W",self.oldClassName];
-}
-
 - (NSString *)classNameExtensionRegex {
     return [NSString stringWithFormat:@"\\W%@\\.%@\\W", self.oldClassName, self.classPath.lastPathComponent.pathExtension];
+}
+
+#pragma mark -- OCMRandomNameProtocol
+- (NSString *)takeOldName:(OCMRandomNameUtil *)randomNameSeft {
+    return self.oldClassName;
+}
+
+- (NSString *)generateRandomName:(OCMRandomNameUtil *)randomNameSeft {
+    return [OCMRandomNameUtil randomClassName];
+}
+
+- (void)setup:(OCMRandomNameUtil *)randomNameSeft randomName:(NSString *)randomName {
+    self.randomClassName = randomName;
+}
+
+#pragma mark -- OCModityFileContentProtocol
+- (NSString *)oldNameToModityFileContent:(OCModityFileContent *)OCModityFileContent {
+    return self.oldClassName;
+}
+
+- (NSString *)newNameToModityFileContent:(OCModityFileContent *)OCModityFileContent {
+    return self.randomClassName;
+}
+
+- (BOOL)enabledModityFileContent:(OCModityFileContent *)OCModityFileContent {
+    return [self.oldClassName containsString:kNewPrefix];
 }
 
 - (BOOL)isEqual:(id)object {

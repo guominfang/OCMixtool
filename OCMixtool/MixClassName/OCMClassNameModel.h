@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "OCMRandomNameUtil.h"
+#import "OCModityFileContent.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OCMClassNameModel : NSObject
+@interface OCMClassNameModel : NSObject <OCMRandomNameProtocol,OCModityFileContentProtocol>
 
 @property (copy, nonatomic) NSString *classPath;
 @property (copy, nonatomic) NSString *oldClassName;
 @property (copy, nonatomic) NSString *randomClassName;
 
-- (NSString *)classNameNotExtensionRegex;
 - (NSString *)classNameExtensionRegex;
 @end
 

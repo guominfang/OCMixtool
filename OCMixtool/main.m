@@ -11,13 +11,17 @@
 #import "OCMixMethodName.h"
 #import "OCModityPrefix.h"
 #import "OCMixClassName.h"
+#import "OCMixEnum.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // 修改前缀
 //        [OCModityPrefix modityPrefix];
         // 修改类名 【如果开启修改类名，必须排在修改前缀后面】 【只会修改含有 kNewPrefix 的类名】
-        [OCMixClassName mixClassName];
+//        [OCMixClassName mixClassName];
+        // 混淆 ENUM
+        [OCMixEnum mixEnum];
+        
         // 混淆方法名称
 //        [OCMixMethodName mixMethodName];
         

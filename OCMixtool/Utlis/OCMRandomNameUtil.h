@@ -7,8 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class OCMRandomNameUtil;
 NS_ASSUME_NONNULL_BEGIN
+@protocol OCMRandomNameProtocol <NSObject>
+
+@required
+- (NSString *)takeOldName:(nullable OCMRandomNameUtil *)randomName;
+- (NSString *)generateRandomName:(nullable OCMRandomNameUtil *)randomNameSeft;
+- (void)setup:(nullable OCMRandomNameUtil *)randomNameSeft randomName:(NSString *)randomName;
+
+@end
+
 
 @interface OCMRandomNameUtil : NSObject
 
@@ -20,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 获取随机类名
 + (NSString *)randomClassName;
+
++ (NSMutableArray *)randomModelArray:(NSMutableArray<id<OCMRandomNameProtocol>> *)modelArray;
 @end
 
 NS_ASSUME_NONNULL_END

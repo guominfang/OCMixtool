@@ -39,4 +39,31 @@ static NSString *letterTable = @"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZX
     return randomName;
 }
 
++ (NSMutableArray *)randomModelArray:(NSMutableArray<id<OCMRandomNameProtocol>> *)modelArray {
+    // 生成新的，不重复的随机名称, 并且也原先的名称也不一样
+    NSMutableDictionary *allRandomName = [NSMutableDictionary dictionary];
+    for (id<OCMRandomNameProtocol> model in modelArray) {
+        // 旧名称 --> 字典的key
+        allRandomName[[model takeOldName:nil]] = @"";
+    }
+    
+    for (id<OCMRandomNameProtocol> model in modelArray) {
+        if (![allRandomName[[model takeOldName:nil]] isEqualToString:@""]) {
+            // 旧名称相同，随机的新名，也保持一样
+            [model setup:nil randomName:allRandomName[[model takeOldName:nil]]];
+            continue;
+        }
+        
+        NSString *randomName = [model generateRandomName:nil];
+        while ([allRandomName.allKeys containsObject:randomName] || [allRandomName.allValues containsObject:randomName]) {
+            // 保证随机类名 不与 原先类名相同以及已生成的随机类名 相同
+            randomName = [model generateRandomName:nil];
+        }
+        allRandomName[[model takeOldName:nil]] = randomName;
+        [model setup:nil randomName:randomName];
+    }
+    
+    return modelArray;
+}
+
 @end

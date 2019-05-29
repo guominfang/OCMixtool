@@ -9,7 +9,6 @@
 #import "OCMixClassName.h"
 #import "OCMFileUtil.h"
 #import "OCMClassNameModel.h"
-#import "OCMRandomNameUtil.h"
 #import "OCMRegexUtil.h"
 
 @implementation OCMixClassName
@@ -17,7 +16,7 @@
 + (void)mixClassName {
     NSArray *fileArray = [OCMFileUtil findAllClassFileFromDirectory:kProjectDirPath];
     NSMutableArray *modelArray = [OCMixClassName classNameModelArray:fileArray];
-    [OCMixClassName modityFileContent:modelArray];
+    [[[OCModityFileContent alloc] init] mixFileContent:fileArray model:modelArray];
     [OCMixClassName modityFileName:modelArray];
     [OCMixClassName modifyProjectPbxprojContent:modelArray];
 }
@@ -50,38 +49,13 @@
     }
     
     // 生成新的，不重复的随机类名
-    NSMutableDictionary *allRandomName = [NSMutableDictionary dictionary];
-    for (OCMClassNameModel *model in classNameModel) {
-        // 旧类名 --> 字典的key
-        allRandomName[model.oldClassName] = @"";
-    }
-    
-    for (OCMClassNameModel *model in classNameModel) {
-        if (![model.oldClassName containsString:kNewPrefix]) {
-            // 类名不包含 kNewPrefix 的类文件，不生成随机类名，也不进行混淆
-            continue;
-        }
-        
-        if (![allRandomName[model.oldClassName] isEqualToString:@""]) {
-            // 旧类名相同，随机的新类名，也保持一样
-            model.randomClassName = allRandomName[model.oldClassName];
-            continue;
-        }
-        
-        NSString *randomName = [OCMRandomNameUtil randomClassName];
-        while ([allRandomName.allKeys containsObject:randomName] || [allRandomName.allValues containsObject:randomName]) {
-            // 保证随机类名 不与 原先类名相同以及已生成的随机类名 相同
-            randomName = [OCMRandomNameUtil randomClassName];
-        }
-        allRandomName[model.oldClassName] = randomName;
-        model.randomClassName = randomName;
-    }
+    classNameModel = [OCMRandomNameUtil randomModelArray:classNameModel];
     return classNameModel;
 }
 
 + (NSMutableArray *)regexFindClassName:(NSMutableArray *)classNameModel filePath:(NSString *)classPath content:(NSString *)content regext:(NSString *)regext {
-    NSArray *implenmentaionNames = [OCMRegexUtil matchModelString:content toRegexString:classImplementationNameRegex];
-    for (NSString *name in implenmentaionNames) {
+    NSArray *regextContentNames = [OCMRegexUtil matchModelString:content toRegexString:regext];
+    for (NSString *name in regextContentNames) {
         OCMClassNameModel *model = [[OCMClassNameModel alloc] init];
         model.classPath = classPath;
         model.oldClassName = name;
@@ -92,34 +66,15 @@
     return classNameModel;
 }
 
-+ (void)modityFileContent:(NSArray *)allModelArray {
-    // 修改文件内容中的类名
-    for (OCMClassNameModel *fileModel in allModelArray) {
-        NSString *fileContent = [NSString stringWithContentsOfFile:fileModel.classPath encoding:NSUTF8StringEncoding error:nil];
-        for (OCMClassNameModel *model in allModelArray) {
-            if (!model.randomClassName) {
-                // 没有随机类名的，也就不需要进行混淆和修改
-                continue;
-            }
-            
-            NSArray *regexContents = [OCMRegexUtil matchString:fileContent toRegexString:[model classNameNotExtensionRegex]];
-            for (NSString *regexContent in regexContents) {
-                NSString *newContent = [regexContent stringByReplacingOccurrencesOfString:model.oldClassName withString:model.randomClassName];
-                fileContent = [fileContent stringByReplacingOccurrencesOfString:regexContent withString:newContent];
-            }
-        }
-        [fileContent writeToFile:fileModel.classPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    }
-}
-
 + (void)modityFileName:(NSArray *)allModelArray {
     // 修改文件名称中的类名
     NSFileManager *fileManager = [NSFileManager defaultManager];
     for (OCMClassNameModel *model in allModelArray) {
-        if (!model.randomClassName) {
-            // 没有随机类名的，也就不需要进行混淆和修改
+        if (![model enabledModityFileContent:nil]) {
+            // 类名不包含 kNewPrefix 的类文件，不生成随机类名，也不进行混淆
             continue;
         }
+        
         NSString *newCompoent = [model.classPath.lastPathComponent stringByReplacingOccurrencesOfString:model.oldClassName withString:model.randomClassName];
         NSString *newFilePath = [model.classPath.stringByDeletingLastPathComponent stringByAppendingPathComponent:newCompoent];
         [fileManager moveItemAtPath:model.classPath toPath:newFilePath error:nil];
@@ -136,11 +91,13 @@
     
     NSString *pbxprojFileContent = [NSString stringWithContentsOfFile:pbxprojFilePath encoding:NSUTF8StringEncoding error:nil];
     for (OCMClassNameModel *model in allModelArray) {
-        if (!model.randomClassName) {
-            // 没有随机类名的，也就不需要进行混淆和修改
+        if (![model enabledModityFileContent:nil]) {
+            // 类名不包含 kNewPrefix 的类文件，不生成随机类名，也不进行混淆
             continue;
         }
-        NSArray *regexContents = [OCMRegexUtil matchString:pbxprojFileContent toRegexString:[model classNameExtensionRegex]];
+        
+        NSString *oldRegex = [NSString stringWithFormat:@"\\W%@\\.%@\\W", model.oldClassName, model.classPath.lastPathComponent.pathExtension];
+        NSArray *regexContents = [OCMRegexUtil matchString:pbxprojFileContent toRegexString:oldRegex];
         for (NSString *regexContent in regexContents) {
             NSString *newContent = [regexContent stringByReplacingOccurrencesOfString:model.oldClassName withString:model.randomClassName];
             pbxprojFileContent = [pbxprojFileContent stringByReplacingOccurrencesOfString:regexContent withString:newContent];
