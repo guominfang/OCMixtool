@@ -12,6 +12,7 @@
 #import "OCModityPrefix.h"
 #import "OCMixClassName.h"
 #import "OCMixEnum.h"
+#import "OCMixBlockName.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -21,6 +22,8 @@ int main(int argc, const char * argv[]) {
 //        [OCMixClassName mixClassName];
         // 混淆 ENUM
         [OCMixEnum mixEnum];
+        // 混淆 BlockName
+        [OCMixBlockName mixBlockName];
         
         // 混淆方法名称
 //        [OCMixMethodName mixMethodName];
