@@ -9,7 +9,6 @@
 #import "OCMixEnum.h"
 #import "OCMFileUtil.h"
 #import "OCMEnumModel.h"
-#import "OCMRandomNameUtil.h"
 #import "OCMRegexUtil.h"
 
 @implementation OCMixEnum
@@ -25,36 +24,32 @@
     NSMutableArray *eunmModels = [NSMutableArray array];
     for (NSString *classPath in fileArray) {
         NSString *fileContent = [NSString stringWithContentsOfFile:classPath encoding:NSUTF8StringEncoding error:nil];
-        
         // eunm 名称
-        NSArray *eunmNames = [OCMRegexUtil matchModelString:fileContent toRegexString:eunmNameRegex];
-        for (NSString *name in eunmNames) {
-            OCMEnumModel *model = [[OCMEnumModel alloc] init];
-            model.oldName = name;
-            if ([eunmModels containsObject:model]) {
-                continue;
-            }
-            [eunmModels addObject:model];
-        }
+        eunmModels = [OCMixEnum regexFindClassName:eunmModels content:fileContent regext:eunmNameRegex];
         
-        // eunm 字段名
+        // eunm 内容
         NSArray *eunmContent = [OCMRegexUtil matchModelString:fileContent toRegexString:eunmContentRegex];
         for (NSString *content in eunmContent) {
-            NSArray *eunmField = [OCMRegexUtil matchString:content toRegexString:eunmFieldRegex];
-            for (NSString *fieldName in eunmField) {
-                OCMEnumModel *model = [[OCMEnumModel alloc] init];
-                model.oldName = [fieldName stringByReplacingOccurrencesOfString:@" " withString:@""];
-                if ([eunmModels containsObject:model]) {
-                    continue;
-                }
-                [eunmModels addObject:model];
-            }
+            // eunm 字段名
+            eunmModels = [OCMixEnum regexFindClassName:eunmModels content:content regext:eunmFieldRegex];
         }
     }
     
     // 生成随机名称
     eunmModels = [OCMRandomNameUtil randomModelArray:eunmModels];
     return eunmModels;
+}
+
++ (NSMutableArray *)regexFindClassName:(NSMutableArray *)modelList content:(NSString *)content regext:(NSString *)regext {
+    NSArray *regextContentNames = [OCMRegexUtil matchModelString:content toRegexString:regext];
+    for (NSString *name in regextContentNames) {
+        OCMEnumModel *model = [[OCMEnumModel alloc] init];
+        model.oldName = [name stringByReplacingOccurrencesOfString:@" " withString:@""];
+        if (![modelList containsObject:model]) {
+            [modelList addObject:model];
+        }
+    }
+    return modelList;
 }
 
 @end

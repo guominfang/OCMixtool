@@ -17,11 +17,11 @@ static NSString *kProjectDirPath = @"/Users/guominfang/Documents/workplace/iOS/S
 // 需要修改的项目的项目名称
 static NSString *kOldProjectName = @"SDK_v4_iOS";
 // 新的项目名称
-//static NSString *kNewProjectName = @"AAAA";
+static NSString *kNewProjectName = @"AAAA";
 // 旧的前缀
 static NSString *kOldPrefix = @"JJF";
 // 新的前缀
-static NSString *kNewPrefix = @"JJF";
+static NSString *kNewPrefix = @"BBF";
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -20,7 +20,11 @@ static NSString *classImplementationNameRegex = @"^ *@implementation +(\\w+) *\\
 
 static NSString *eunmNameRegex = @"^ *typedef +NS_ENUM.*?(\\w+)\\)";
 static NSString *eunmContentRegex = @"^ *typedef +NS_ENUM.*?(\\{[\\s\\S]*?\\})";
-static NSString *eunmFieldRegex = @"^ *[a-z_A-Z]+";
+static NSString *eunmFieldRegex = @"^ *([a-z_A-Z]+)";
+
+static NSString *blockLocalRegex = @"^ *\\w* *\\( *\\^ *(\\w*) *\\)";
+static NSString *blockPropertyRegex = @"^ *@property.*?\\( *\\^ *(\\w*) *\\)";
+static NSString *blockTypedefRegex = @"^ *typedef.*?\\( *\\^ *(\\w*) *\\)";
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OCMRegexUtil : NSObject
@@ -29,3 +33,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
