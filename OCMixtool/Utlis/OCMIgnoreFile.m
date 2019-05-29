@@ -12,7 +12,7 @@
 @implementation OCMIgnoreFile
 
 + (BOOL)isIgnoreHiddenFileWithName:(NSString *)fileName {
-    // 忽略隐藏文件 第三方框架 配置目录
+    // 忽略隐藏文件 .a .framework 配置目录
     return [fileName hasPrefix:@"."] || [fileName hasSuffix:@".a"] || [fileName hasSuffix:@".framework"] || [fileName hasSuffix:@".xcassets"] || [fileName hasSuffix:@".lproj"] || [fileName hasSuffix:@".plist"] || [fileName hasSuffix:@".bundle"] || [fileName hasSuffix:@".plist"];
 }
 

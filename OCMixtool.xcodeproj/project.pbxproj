@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC333564229E17B40046FFC3 /* OCMixClassName.m in Sources */ = {isa = PBXBuildFile; fileRef = AC333563229E17B40046FFC3 /* OCMixClassName.m */; };
+		AC333567229E1A7B0046FFC3 /* OCMClassNameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC333566229E1A7B0046FFC3 /* OCMClassNameModel.m */; };
 		AC7C6C632283C18200182D58 /* OCModityPrefix.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7C6C622283C18200182D58 /* OCModityPrefix.m */; };
 		AC7C6C672283C38B00182D58 /* OCMixMethodName.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7C6C662283C38B00182D58 /* OCMixMethodName.m */; };
 		F565B3382276866800BCA081 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F565B3372276866800BCA081 /* main.m */; };
@@ -32,6 +34,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC333562229E17B40046FFC3 /* OCMixClassName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMixClassName.h; sourceTree = "<group>"; };
+		AC333563229E17B40046FFC3 /* OCMixClassName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMixClassName.m; sourceTree = "<group>"; };
+		AC333565229E1A7B0046FFC3 /* OCMClassNameModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMClassNameModel.h; sourceTree = "<group>"; };
+		AC333566229E1A7B0046FFC3 /* OCMClassNameModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMClassNameModel.m; sourceTree = "<group>"; };
 		AC7C6C612283C18200182D58 /* OCModityPrefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCModityPrefix.h; sourceTree = "<group>"; };
 		AC7C6C622283C18200182D58 /* OCModityPrefix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCModityPrefix.m; sourceTree = "<group>"; };
 		AC7C6C652283C38B00182D58 /* OCMixMethodName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMixMethodName.h; sourceTree = "<group>"; };
@@ -66,6 +72,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC333561229E17220046FFC3 /* MixClassName */ = {
+			isa = PBXGroup;
+			children = (
+				AC333562229E17B40046FFC3 /* OCMixClassName.h */,
+				AC333563229E17B40046FFC3 /* OCMixClassName.m */,
+				AC333565229E1A7B0046FFC3 /* OCMClassNameModel.h */,
+				AC333566229E1A7B0046FFC3 /* OCMClassNameModel.m */,
+			);
+			path = MixClassName;
+			sourceTree = "<group>";
+		};
 		AC7C6C602283C16A00182D58 /* ModityPrefix */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +120,7 @@
 		F565B3362276866800BCA081 /* OCMixtool */ = {
 			isa = PBXGroup;
 			children = (
+				AC333561229E17220046FFC3 /* MixClassName */,
 				AC7C6C642283C37800182D58 /* MixMethodName */,
 				AC7C6C602283C16A00182D58 /* ModityPrefix */,
 				F565B3542276F08F00BCA081 /* MixPropertyName */,
@@ -206,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC333564229E17B40046FFC3 /* OCMixClassName.m in Sources */,
 				F565B3382276866800BCA081 /* main.m in Sources */,
 				F565B3502276EE8800BCA081 /* OCMRegexUtil.m in Sources */,
 				F565B36922772B0D00BCA081 /* OCMPropertyModel.m in Sources */,
@@ -214,6 +233,7 @@
 				F565B3532276F07F00BCA081 /* OCMFileUtil.m in Sources */,
 				AC7C6C672283C38B00182D58 /* OCMixMethodName.m in Sources */,
 				F565B363227701D400BCA081 /* OCMixPropertyName.m in Sources */,
+				AC333567229E1A7B0046FFC3 /* OCMClassNameModel.m in Sources */,
 				F565B366227703E000BCA081 /* OCMRandomNameUtil.m in Sources */,
 				F565B35D2276F9C600BCA081 /* OCMConfig.m in Sources */,
 			);

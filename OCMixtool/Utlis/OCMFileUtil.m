@@ -8,7 +8,7 @@
 
 #import "OCMFileUtil.h"
 #import "OCMIgnoreFile.h"
-#import "OCMConfig.h"
+
 
 @implementation OCMFileUtil
 

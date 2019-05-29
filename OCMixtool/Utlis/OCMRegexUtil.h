@@ -13,10 +13,16 @@ static NSString *propertyNameRegex = @"\\s*\\w+\\s*?;";
 static NSString *propertyStatementGetterNameRegex = @"getter\\s*=\\s*\\w*";
 static NSString *propertyStatementSetterNameRegex = @"setter\\s*=\\s*\\w*";
 
+static NSString *classProtocolNameRegex = @"^ *@protocol +(\\w+)";
+static NSString *classCategoryNameRegex = @"^ *@interface +\\w+ *\\( *(\\w+) *\\)";
+static NSString *classStatementNameRegex = @"^ *@interface +(\\w+) *:";
+static NSString *classImplementationNameRegex = @"^ *@implementation +(\\w+) *\\n";
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OCMRegexUtil : NSObject
 + (NSArray *)matchString:(NSString *)string toRegexString:(NSString *)regexStr;
++ (NSArray *)matchModelString:(NSString *)string toRegexString:(NSString *)regexStr;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -26,7 +26,6 @@
     return [OCMRandomNameUtil randomNameMinLength:12 length:8];
 }
 
-
 static NSString *letterTable = @"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
 
 + (NSString *)randomNameMinLength:(int)minLength length:(int)length {

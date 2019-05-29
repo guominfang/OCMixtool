@@ -7,7 +7,6 @@
 //
 
 #import "OCModityPrefix.h"
-#import "OCMConfig.h"
 #import "OCMFileUtil.h"
 
 @implementation OCModityPrefix
