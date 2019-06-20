@@ -37,15 +37,34 @@
             [classNameModel addObject:model];
         }
         
-        // 一个文件存在多个 类定义
+        // 因为 类名、Block、Eunm的名称不能一样，避免重复，集合在一起混淆
+        // 一个文件存在多个 类定义 Block Enum
         // 获取 protocol 类名
         classNameModel = [OCMixClassName regexFindClassName:classNameModel filePath:classPath content:fileContent regext:classProtocolNameRegex];
-        // 获取category 类名
+        // 获取 category 类名
         classNameModel = [OCMixClassName regexFindClassName:classNameModel filePath:classPath content:fileContent regext:classCategoryNameRegex];
         // 获取类声明 类名
         classNameModel = [OCMixClassName regexFindClassName:classNameModel filePath:classPath content:fileContent regext:classStatementNameRegex];
         // 获取类实现 类名
         classNameModel = [OCMixClassName regexFindClassName:classNameModel filePath:classPath content:fileContent regext:classImplementationNameRegex];
+        
+        // 混淆 Block
+        // 局部变量 方式定义的Block
+        classNameModel = [OCMixClassName regexFindClassName:classNameModel filePath:classPath content:fileContent regext:blockLocalRegex];
+        // 属性 方式定义的Block
+        classNameModel = [OCMixClassName regexFindClassName:classNameModel filePath:classPath content:fileContent regext:blockPropertyRegex];
+        // Typedef 方式定义的Block
+        classNameModel = [OCMixClassName regexFindClassName:classNameModel filePath:classPath content:fileContent regext:blockTypedefRegex];
+        
+        // 混淆 ENUM
+        // eunm 名称
+        classNameModel = [OCMixClassName regexFindClassName:classNameModel filePath:classPath content:fileContent regext:eunmNameRegex];
+        // eunm 内容
+        NSArray *eunmContent = [OCMRegexUtil matchModelString:fileContent toRegexString:eunmContentRegex];
+        for (NSString *content in eunmContent) {
+            // eunm 字段名
+            classNameModel = [OCMixClassName regexFindClassName:classNameModel filePath:classPath content:content regext:eunmFieldRegex];
+        }
     }
     
     // 生成新的，不重复的随机类名

@@ -40,7 +40,7 @@ static NSString *letterTable = @"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZX
 }
 
 + (NSMutableArray *)randomModelArray:(NSMutableArray<id<OCMRandomNameProtocol>> *)modelArray {
-    // 生成新的，不重复的随机名称, 并且也原先的名称也不一样
+    // 生成新的，不重复的随机名称, 并且与原先的名称也不一样
     NSMutableDictionary *allRandomName = [NSMutableDictionary dictionary];
     for (id<OCMRandomNameProtocol> model in modelArray) {
         // 旧名称 --> 字典的key
